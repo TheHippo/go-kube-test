@@ -9,4 +9,5 @@ RUN go build -v -ldflags "-s -w" -trimpath ./...
 FROM bitnami/minideb:latest
 WORKDIR /app
 COPY --from=builder /app/go-kube-test .
+EXPOSE 8080
 ENTRYPOINT ["/app/go-kube-test"]
